@@ -19,6 +19,16 @@ To install supervisor as a windows service run the command
 
 `python -m supervisor.services install -c supervisord.conf`
 
+Administrator privileges are needed to install a Windows service.
+
+Run as interactive programs
+---------------------------
+It is also possible to run supervisor and supervisorctl as plain processes,
+for example to help debugging. For example:
+
+supervisord.exe -c supervisord.conf
+supervisorctl.exe -c supervisord.conf
+
 Supervisor for Unix-Like System
 -------------------------------
 `Original project for unix-like system <https://github.com/Supervisor/supervisor>`_
