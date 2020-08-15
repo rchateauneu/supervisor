@@ -29,6 +29,8 @@ for example to help debugging. For example:
 supervisord.exe -c supervisord.conf
 supervisorctl.exe -c supervisord.conf
 
+These scripts are created in the directory Scripts/ when installing supervisor.
+
 Supervisor for Unix-Like System
 -------------------------------
 `Original project for unix-like system <https://github.com/Supervisor/supervisor>`_
