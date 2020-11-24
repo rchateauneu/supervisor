@@ -19,10 +19,18 @@ matrix:
             - PATH=/c/Python37:/c/Python37/Scripts:$PATH
             - TOXENV=py37
 
-        - name: "Python 3.7.4 on macOS"
-          os: osx
-          osx_image: xcode11.2  # Python 3.7.4 running on macOS 10.14.4
-          language: shell       # 'language: python' is an error on Travis CI macOS
+        - name: "Python 3.8.0 on Windows"
+          os: windows           # Windows 10.0.17134 N/A Build 17134
+          language: shell       # 'language: python' is an error on Travis CI Windows
+          # python: 3.8         # 'python:' is ignored on Travis CI Windows
+          before_install:
+            # https://travis-ci.community/t/windows-python-pip-module-not-found/5480/4
+            - choco install python  --version 3.8.0
+            - python -m pip install --upgrade pip
+            - python -m pip install pywin32
+          env:
+            - PATH=/c/Python38:/c/Python38/Scripts:$PATH
+            - TOXENV=py38
 
 install:
     - travis_retry pip install virtualenv tox
